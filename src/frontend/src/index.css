@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Satoshi:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0.1 0.03 265;
+    --foreground: 0.98 0 0;
+    --card: 0.14 0.025 265;
+    --card-foreground: 0.98 0 0;
+    --popover: 0.12 0.028 265;
+    --popover-foreground: 0.98 0 0;
+    --primary: 0.59 0.2 255;
+    --primary-foreground: 0.98 0 0;
+    --secondary: 0.18 0.03 265;
+    --secondary-foreground: 0.85 0.01 265;
+    --muted: 0.16 0.025 265;
+    --muted-foreground: 0.6 0.02 265;
+    --accent: 0.69 0.18 162;
+    --accent-foreground: 0.05 0.01 162;
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.25 0.025 265;
+    --input: 0.2 0.025 265;
+    --ring: 0.59 0.2 255;
+    --radius: 0.75rem;
+    --chart-1: 0.59 0.2 255;
+    --chart-2: 0.69 0.18 162;
+    --chart-3: 0.75 0.15 55;
+    --chart-4: 0.62 0.2 300;
+    --chart-5: 0.65 0.18 20;
+    --sidebar: 0.12 0.03 265;
+    --sidebar-foreground: 0.98 0 0;
+    --sidebar-primary: 0.59 0.2 255;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.16 0.025 265;
+    --sidebar-accent-foreground: 0.85 0.01 265;
+    --sidebar-border: 0.22 0.025 265;
+    --sidebar-ring: 0.59 0.2 255;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Satoshi", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+  }
+
+  .glass-card-strong {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+  }
+
+  .feedback-item {
+    background: rgba(59, 130, 246, 0.08);
+    border-left: 4px solid #3b82f6;
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+  }
+
+  .btn-primary {
+    background: linear-gradient(
+      135deg,
+      oklch(0.59 0.2 255),
+      oklch(0.52 0.22 265)
+    );
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .btn-emerald {
+    background: linear-gradient(
+      135deg,
+      oklch(0.69 0.18 162),
+      oklch(0.62 0.19 165)
+    );
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .btn-emerald:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+}
